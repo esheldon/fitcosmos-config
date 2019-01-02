@@ -1,0 +1,7 @@
+# cosmos only
+# this version with mask centered on jacobian center
+seed: 32454
+chunksize: 10
+
+# for condor
+jobs_per_sub: 100

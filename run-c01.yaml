@@ -1,7 +1,11 @@
 # cosmos only
 # this version with mask centered on jacobian center
+
+#meds_run: 'cd02'
+#fit_conf: 'c01'
+
 seed: 32454
-chunksize: 10
+chunksize: 1000
 
 # for condor
 jobs_per_sub: 100

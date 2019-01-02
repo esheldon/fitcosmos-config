@@ -1,0 +1,6 @@
+# this version with mask centered on jacobian center
+seed: 78312
+chunksize: 10
+
+# for condor
+jobs_per_sub: 100

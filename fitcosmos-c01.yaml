@@ -6,6 +6,11 @@ hst_band: 0
 # coadds
 keep_best_epoch: True
 
+# 'weight' is no masking
+# 'circular-mask' is a circular mask based on radius
+weight_type: 'circular-mask'
+
+
 fofs:
     method: 'radius'
     check_seg: false

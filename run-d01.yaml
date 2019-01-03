@@ -1,7 +1,7 @@
-# cosmos only
+# DES only
 # this version with mask centered on jacobian center
 
-seed: 32454
+seed: 3123
 chunksize: 10
 
 # for condor

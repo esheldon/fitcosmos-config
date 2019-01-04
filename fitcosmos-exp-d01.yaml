@@ -1,0 +1,63 @@
+# fitting des data only
+
+hst_band: null
+
+# multiple epochs just means overlap between
+# coadds
+keep_best_epoch: True
+
+fofs:
+    method: 'radius'
+    check_seg: false
+
+    # name in meds file, or catalog if method is catalog_radius
+    radius_column: "iso_radius_arcsec"
+
+    # factor to multiply radius this happens before clipping to [min_radius,
+    # max_radius] for a low threshold, the isoarea is basically covering all
+    # the observed flux, so mult of 1 makes sense
+    radius_mult: 1.0
+
+    # clip the radius in pixels=sqrt(isoarea_image/pi)
+    # 5 pixels is about 3 sigma for a 1'' FWHM gaussian
+    # this happens after the radius_mult is applied
+    min_radius_arcsec: 1.0
+    max_radius_arcsec: null
+
+    # This is added to the radius. This kind of padding makes sense for radii
+    # based on the iso area.  Padding happens after mult and clipping
+    padding_arcsec: 0.5
+
+mof:
+
+    model: 'exp'
+
+    # for guesses
+    detband: 0
+   
+    priors:
+        cen:
+            type: 'normal2d'
+            sigma: 0.03
+
+        g:
+            type: 'ba'
+            sigma: 0.2
+
+        T:
+            type: 'two-sided-erf'
+            pars: [-1.0, 0.1, 1.0e+06, 1.0e+05]
+
+        flux:
+            type: 'two-sided-erf'
+            pars: [-100.0, 1.0, 1.0e+09, 1.0e+08]
+
+    psf:
+        model: 'coellip3'
+
+        ntry: 2
+
+        lm_pars:
+            maxfev: 2000
+            ftol: 1.0e-5
+            xtol: 1.0e-5

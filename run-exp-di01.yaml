@@ -1,0 +1,8 @@
+# DES only, only i band
+# this version with mask centered on jacobian center
+
+seed: 17296
+chunksize: 100
+
+# for condor
+jobs_per_sub: 100

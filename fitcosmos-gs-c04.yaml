@@ -1,0 +1,104 @@
+# real space galsim fitter
+# larger min size for hlr
+parspace: 'galsim'
+use_kspace: False
+
+inject:
+    do_inject: False
+    model: 'exp'
+    flux: 10000.0
+    hlr: 1.0e-04
+    #model: 'bdf'
+    #fracdev: 0.5
+
+    #psf:
+    #    fwhm: 0.2
+
+hst_band: 0
+
+# multiple epochs just means overlap between
+# coadds
+keep_best_epoch: True
+
+# 'weight' is no masking
+# 'circular-mask' is a circular mask based on radius
+#weight_type: 'circular-mask'
+weight_type: 'weight'
+
+
+fofs:
+    method: 'radius'
+    check_seg: false
+
+    # name in meds file, or catalog if method is catalog_radius
+    radius_column: "iso_radius_arcsec"
+
+    # factor to multiply radius this happens before clipping to [min_radius,
+    # max_radius] for a low threshold, the isoarea is basically covering all
+    # the observed flux, so mult of 1 makes sense
+    radius_mult: 1.0
+
+    # clip the radius in pixels=sqrt(isoarea_image/pi)
+    # 5 pixels is about 3 sigma for a 1'' FWHM gaussian
+    # this happens after the radius_mult is applied
+    min_radius_arcsec: 1.0
+    max_radius_arcsec: null
+
+    # This is added to the radius. This kind of padding makes sense for radii
+    # based on the iso area.  Padding happens after mult and clipping
+    padding_arcsec: 0.5
+
+mof:
+
+    model: 'bdf'
+    #model: 'exp'
+    #model: 'dev'
+    #model: 'gauss'
+
+    # for guesses
+    detband: 0
+   
+    priors:
+        cen:
+            type: 'normal2d'
+            sigma: 0.03
+
+        g:
+            type: 'ba'
+            sigma: 0.2
+
+        hlr:
+            type: 'flat'
+            pars: [1.0e-06, 1.0e+09]
+            #pars: [1.0e-08, 1.0e+09]
+            #type: 'log-normal'
+            #mean: 0.216
+            #sigma: 0.227
+
+        fracdev:
+            #type: 'truncated-normal'
+            type: 'normal'
+            mean: 0.5
+            sigma: 0.1
+            #sigma: 0.0001
+            #minval: -2.0
+            #maxval: 3.0
+            #minval: 0.0
+            #maxval: 1.0
+
+
+        flux:
+            #type: 'two-sided-erf'
+            #pars: [-100.0, 1.0, 1.0e+09, 1.0e+08]
+            type: 'flat'
+            pars: [0.0001, 1.0e+09]
+
+    psf:
+        model: 'coellip3'
+
+        ntry: 2
+
+        lm_pars:
+            maxfev: 2000
+            ftol: 1.0e-5
+            xtol: 1.0e-5

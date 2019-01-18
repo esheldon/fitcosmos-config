@@ -76,13 +76,13 @@ mof:
             #sigma: 0.227
 
         fracdev:
-            #type: 'truncated-normal'
-            type: 'normal'
+            type: 'truncated-normal'
+            #type: 'normal'
             mean: 0.5
             sigma: 0.1
             #sigma: 0.0001
-            #minval: -2.0
-            #maxval: 3.0
+            minval: -2.0
+            maxval: 3.0
             #minval: 0.0
             #maxval: 1.0
 

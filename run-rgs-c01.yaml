@@ -1,0 +1,7 @@
+# cosmos only, galsim fitterr
+
+seed: 23983
+chunksize: 10
+
+# for condor
+jobs_per_sub: 100

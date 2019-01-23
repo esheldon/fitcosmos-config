@@ -48,6 +48,9 @@ fofs:
     # based on the iso area.  Padding happens after mult and clipping
     padding_arcsec: 0.5
 
+    # arcsec
+    extra_psf_fwhm_arcsec: 1.0
+
 mof:
 
     model: 'bdf'

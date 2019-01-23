@@ -1,0 +1,5 @@
+seed: 648
+chunksize: 1000
+
+# for condor
+jobs_per_sub: 100

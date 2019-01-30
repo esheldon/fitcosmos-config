@@ -1,0 +1,7 @@
+# was paired with fitcosmos-gs-c05
+
+seed: 5631
+chunksize: 100
+
+# for condor
+jobs_per_sub: 100

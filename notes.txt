@@ -1,3 +1,8 @@
+run-gs-c06
+fitcosmos-gs-c05
+    - has fix for model shifts accounting for jacobian offset from center
+
+---------------------
 run-gs-c05
 fitcosmos-gs-c05
 

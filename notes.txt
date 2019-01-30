@@ -1,0 +1,16 @@
+run-gs-c05
+fitcosmos-gs-c05
+
+    - cosmos only, galsim fitter in fourier space, getting groups without
+      "extra seeing", so blends in that catalog are rare (cleanonly)
+
+
+run-di02
+fitcosmos-exp-d02.yaml
+
+    - exp fit to des i band only, to check astrometry
+
+run-vH01
+fitcosmos-exp-d02.yaml
+
+    - exp fit to vista H band only, to check astrometry

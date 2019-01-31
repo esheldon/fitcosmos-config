@@ -1,3 +1,8 @@
+run-fmof-dv02
+    - fitcosmos-fmof-dv01
+    - model fits from run-gs-c06
+    - shifts from shifts-combined-di03-vH02.fits
+
 run-gs-c06
 fitcosmos-gs-c05
     - has fix for model shifts accounting for jacobian offset from center

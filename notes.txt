@@ -2,6 +2,19 @@ run-gs-c06
 fitcosmos-gs-c05
     - has fix for model shifts accounting for jacobian offset from center
 
+run-vH02
+fitcosmos-exp-d02.yaml
+
+    - exp fit to vista H band only, to check astrometry
+
+run-di03
+fitcosmos-exp-d02.yaml
+
+    - exp fit to des i band only, to check astrometry
+
+
+
+older stuff
 ---------------------
 run-gs-c05
 fitcosmos-gs-c05

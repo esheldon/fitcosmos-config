@@ -1,0 +1,8 @@
+# using with fitcosmos-exp-d02.yaml
+# ULTRAVISTA only, only H band
+
+seed: 1762
+chunksize: 100
+
+# for condor
+jobs_per_sub: 100

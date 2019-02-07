@@ -1,3 +1,4 @@
+
 run-fmof-dv02
     - fitcosmos-fmof-dv01
     - model fits from run-gs-c06
@@ -17,6 +18,11 @@ fitcosmos-exp-d02.yaml
 
     - exp fit to des i band only, to check astrometry
 
+new configs, not yet run
+------------------------
+fitcosmos-d02
+    - ngmix space, 0.263 cen prior, the by-now standard fracdev
+    priors
 
 
 older stuff
